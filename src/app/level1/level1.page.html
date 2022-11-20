@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title><p align="center">Level 1<p></ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="home"></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="loading">
+
+  <div align="center" *ngIf="!startGame" >
+           <br>
+           <p style="color:white" class="load">Match all the cards to win!</p>
+           <p style="color:white" class="load">You have <b>{{userLife}} turns.</b></p>
+           <br>
+           <h4 style="color:white" class="count">Start in <span style="color:rgb(38, 241, 255); font-size:24px;">{{countDown}}</span>....</h4>
+  </div>
+
+  <div align="center" *ngIf="startGame && gameState == 'init'">
+            <h2 style="color:white">Match all the cards to win!</h2>
+            <ion-row align-items-center text-center size="8" >
+            <ion-col align-self-center size="3" *ngFor="let c of cardsArray;
+            let i = index"> 
+
+            <img src="../assets/img/cards/background.jpg" *ngIf="c.pos != selectCard1pos && c.pos != selectCard2pos && c.val > -1" 
+            (click)="selectCard(c.pos, c.val, i)"
+            alt="card" style ="width: 70%; height: 100%; border: solid 2px #000; border-radius: 12px;">
+
+            <img [src]="imageDir + images[c.val] + '.jpg'" *ngIf="c.pos == selectCard1pos && c.val > -1" 
+            alt="card" style ="width: 70%; height: 100%; border: solid 2px #000; border-radius: 12px;">
+
+            <img [src]="imageDir + images[c.val] + '.jpg'" *ngIf="c.pos == selectCard2pos && c.val > -1" 
+            alt="card" style ="width: 70%; height: 100%; border: solid 2px #000; border-radius: 12px;">
+
+            <img src="../assets/img/cards/riki.jpg" *ngIf="c.val == -1" 
+            alt="card" style ="width: 70%; height: 100%; border: solid 2px #000; border-radius: 12px;">
+
+            </ion-col>
+            </ion-row>
+  </div>
+
+<div align="center" *ngIf="startGame && gameState == 'init'">
+  <h3 style="color:white;" class="name">{{images[selectCard1val]}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{images[selectCard2val]}}</h3>
+  <br>
+  <ion-row>
+    <ion-col col-9><p style="color:white">You Have <span style="color:rgb(24, 133, 24); font-size:24px;">{{userLife}}</span> turns. &nbsp; {{shownTime}}</p>
+    </ion-col>
+  </ion-row>
+</div>
+
+<div *ngIf="gameState == 'win'" align="center">
+  <br>
+  <p style="color:white" class="win">You <span style="color:rgb(21, 255, 0); font-size: 24px;">WON</span>!!!</p>
+</div>
+<div *ngIf="gameState == 'win'" align="center">
+  <br>
+  <p style="color:white" class="win">Would you like to PLAY again?</p>
+  <br>
+  <ion-button size="large" color="danger" (click)="restartGame()"><ion-icon name="repeat"></ion-icon>&nbsp; &nbsp; PLAY AGAIN</ion-button>
+</div>
+
+<div *ngIf="gameState == 'lose'" align="center">
+  <br>
+  <p style="color:white" class="lose">You have <span style="color:rgb(255, 102, 0); font-size: 24px;">LOST</span> this one</p>
+</div>
+<div *ngIf="gameState == 'lose'" align="center">
+  <br>
+  <p style="color:white" class="lose">Would you like to try again?</p>
+  <br>
+  <ion-button size="large" color="danger" (click)="restartGame()"><ion-icon name="repeat"></ion-icon>&nbsp; &nbsp; Try Again</ion-button>
+</div>
+
+</ion-content>

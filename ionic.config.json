@@ -1,0 +1,7 @@
+{
+  "name": "MatchCard",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

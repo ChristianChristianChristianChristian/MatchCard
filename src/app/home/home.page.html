@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <p align="center"  style="font-family:Trajan Pro Bold">MatchCard</p>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="background">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large" style="color:white">MatchCard</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div align="center">
+    <p style="font-size: 50px; color:white" class="one">Welcome to MatchCard</p>
+    <p style="color:white" class="two">Simply match all the cards to Win!</p>
+  </div>
+  <ion-button expand="block" fill="clear" color="transparent" routerLink="/level1" routerDirection="forward" class="lvl1">⏵START</ion-button>
+
+<div align="left" style="position: absolute; bottom:0; left:0;">
+  <ion-row><ion-button fill="clear" color="transparent" routerLink="/about" routerDirection="forward" class="me">About</ion-button></ion-row>
+</div>
+
+</ion-content>
