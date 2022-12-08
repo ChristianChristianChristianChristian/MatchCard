@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title><p align="center">Level 1<p></ion-title>
+    <ion-title><p align="center">Level 2<p></ion-title>
       <ion-buttons slot="start">
         <ion-back-button defaultHref="home"></ion-back-button>
       </ion-buttons>
@@ -18,12 +18,12 @@
   </div>
 
   <div align="center" *ngIf="startGame && gameState == 'init'">
-            <h2 style="color:white">Match all the cards to win!</h2>
+            <h2 style="color:rgb(245, 255, 98); font-family:cursive;">Match all the cards to win!</h2>
             <ion-row align-items-center text-center size="8" >
             <ion-col align-self-center size="3" *ngFor="let c of cardsArray;
             let i = index"> 
 
-            <img src="../assets/img/cards/background.jpg" *ngIf="c.pos != selectCard1pos && c.pos != selectCard2pos && c.val > -1" 
+            <img src="../assets/img/cards/fam.jpg" *ngIf="c.pos != selectCard1pos && c.pos != selectCard2pos && c.val > -1" 
             (click)="selectCard(c.pos, c.val, i)"
             alt="card" style ="width: 70%; height: 100%; border: solid 2px #000; border-radius: 12px;">
 
@@ -33,7 +33,7 @@
             <img [src]="imageDir + images[c.val] + '.jpg'" *ngIf="c.pos == selectCard2pos && c.val > -1" 
             alt="card" style ="width: 70%; height: 100%; border: solid 2px #000; border-radius: 12px;">
 
-            <img src="../assets/img/cards/riki.jpg" *ngIf="c.val == -1" 
+            <img src="../assets/img/cards/peter.jpg" *ngIf="c.val == -1" 
             alt="card" style ="width: 70%; height: 100%; border: solid 2px #000; border-radius: 12px;">
 
             </ion-col>
@@ -44,7 +44,7 @@
   <h3 style="color:white;" class="name">{{images[selectCard1val]}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{images[selectCard2val]}}</h3>
   <br>
   <ion-row>
-    <ion-col col-9><p style="color:white">You Have <span style="color:rgb(24, 133, 24); font-size:24px;">{{userLife}}</span> turns. &nbsp; {{shownTime}}</p>
+    <ion-col col-9><p style="color:rgb(0, 9, 138)">You Have <span style="color:rgb(255, 0, 0); font-size:24px;">{{userLife}}</span> turns. &nbsp; {{shownTime}}</p>
     </ion-col>
   </ion-row>
 </div>
@@ -57,7 +57,7 @@
   <br>
   <p style="color:white" class="win">Proceed to next level?</p>
   <br>
-  <ion-button size="large" color="danger" routerLink="/level2"><ion-icon name="caret-forward-circle-outline"></ion-icon>&nbsp; &nbsp; NEXT LEVEL</ion-button>
+  <ion-button size="large" color="danger" routerLink="/level3"><ion-icon name="caret-forward-circle-outline"></ion-icon>&nbsp; &nbsp; NEXT LEVEL</ion-button>
 </div>
 
 <div *ngIf="gameState == 'lose'" align="center">

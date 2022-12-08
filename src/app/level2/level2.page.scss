@@ -1,0 +1,26 @@
+ion-content.loading{
+    --background: url(../../assets/img/cards/quahog.jpg)
+}
+p.load{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+    text-shadow: 0 0 3px #FF0000, 0 0 5px #ff9900;
+}
+h4.count{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 40px;
+    text-shadow: 0 0 3px #FF0000, 0 0 5px #ff3503;
+}
+h3.name{
+    text-shadow: 0 0 100px #000000, 0 0 8px #0000FF;
+}
+p.win{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 40px;
+    text-shadow: 0 0 3px #FF0000, 0 0 5px #ff3503;
+}
+p.lose{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 40px;
+    text-shadow: 0 0 10px #ff0040, 0 0 10px #ff0303;
+}

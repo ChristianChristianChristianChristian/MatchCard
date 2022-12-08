@@ -19,9 +19,9 @@ export class Level1Page implements OnInit {
 
   public cardsTotal = 12;
   public cardsArray:any[] = [];
-  public userLife = 5;
-  public imageDir = '../assets/img/face/';
-  public images =['Juggernaut', 'Luna', 'Monkey King', 'Phantom Lancer', 'Templar Assassin', 'Windranger', 'Wraith King', 'Zues'];
+  public userLife = 10;
+  public imageDir = '../assets/img/face/Level1/';
+  public images =['Juggernaut', 'Phantom Lancer', 'Templar Assassin', 'Windranger', 'Invoker', 'Lina'];
 
   public selectCard1pos= -1;
   public selectCard1val = -1;
@@ -105,7 +105,7 @@ export class Level1Page implements OnInit {
         this.interCount = null;
 
 
-        this.userLife = 5;
+        this.userLife = 10;
         this.populateCards();
         this.resetSelect();
         this.shuffle(this.cardsArray);
